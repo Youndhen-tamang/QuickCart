@@ -23,14 +23,7 @@ async ({event})=>{
   }
 
   await connectDB();
-  const userCreated = await User.create(userData);
-
-  try {if(User){
-    console.log("User created");
-  }}
-  catch(error){
-    return error
-  }
+  await User.create(userData);
 
 }
 )
@@ -53,7 +46,7 @@ async ()=>{
   }
 
   await connectDB();
-  const userUpdated = await User.findByIdAndUpdate(id,userData)
+  await User.findByIdAndUpdate(id,userData)
 
 }
 )
